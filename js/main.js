@@ -1,4 +1,38 @@
-document.addEventListener("DOMContentLoaded",()=>{const cur=location.pathname.split("/").pop()||"index.html";document.querySelectorAll(".nav-link").forEach(a=>{if(a.getAttribute("href")===cur)a.classList.add("active")});const f=document.getElementById("contactForm");if(f)f.addEventListener("submit",e=>{e.preventDefault();const n=document.getElementById("name").value,e1=document.getElementById("email").value,s=document.getElementById("subject").value,m=document.getElementById("message").value;location.href=`mailto:ravie.lououadi.fr@gmail.com?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(`Bonjour Ravie,\n\nNom : ${n}\nEmail : ${e1}\n\n${m}`)}`;document.getElementById("status").textContent="Votre messagerie va s’ouvrir avec le message préparé."})});
+document.addEventListener("DOMContentLoaded", () => {
+    const cur = location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll(".nav-link").forEach(a => {
+        if (a.getAttribute("href") === cur) {
+            a.classList.add("active");
+        }
+    });
+
+    const f = document.getElementById("contactForm");
+
+    if (f) {
+        f.addEventListener("submit", e => {
+            e.preventDefault();
+
+            const captcha = grecaptcha.getResponse();
+
+            if (captcha.length === 0) {
+                document.getElementById("status").textContent =
+                    "Veuillez confirmer que vous n'êtes pas un robot.";
+                return;
+            }
+
+            const n = document.getElementById("name").value;
+            const e1 = document.getElementById("email").value;
+            const s = document.getElementById("subject").value;
+            const m = document.getElementById("message").value;
+
+            location.href = `mailto:ravie.lououadi.fr@gmail.com?subject=${encodeURIComponent(s)}&body=${encodeURIComponent(`Bonjour Ravie,\n\nNom : ${n}\nEmail : ${e1}\n\n${m}`)}`;
+
+            document.getElementById("status").textContent =
+                "Votre messagerie va s’ouvrir avec le message préparé.";
+        });
+    }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
 

@@ -157,9 +157,7 @@ a {
     color: var(--orange);
 }
 
-/* =========================
-   SECTIONS ET CARTES
-========================= */
+
 
 .section {
     padding: 80px 0;
@@ -1105,6 +1103,10 @@ a {
 }
 
 .bts-option-selected {
+    border: 2px solid #f26a21;
+}
+
+#choix{
     border-color: #ffc4a4;
 }
 
@@ -1510,4 +1512,28 @@ footer {
         width: 100%;
         min-width: 100%;
     }
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.profile-info span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.profile-info i {
+    color: #d65a24;
+    font-size: 1rem;
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
 }
