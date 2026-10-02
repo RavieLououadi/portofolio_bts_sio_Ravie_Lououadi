@@ -9,8 +9,7 @@ portfolio-bts-sio/
 ├── index.html
 ├── formation.html
 ├── experience.html
-├── competences.html
-├── realisations.html
+├── formation.html
 ├── veille.html
 ├── contact.html
 ├── README.md
@@ -21,15 +20,9 @@ portfolio-bts-sio/
 │   └── main.js
 ├── assets/
 │   ├── images/
-│   │   └── README.txt
 │   └── documents/
-│       └── README.txt
-├── documents/
-│   └── cv.pdf
-└── projets/
-    ├── blue-life.html
-    ├── portfolio.html
-    └── wordpress.html
+│       └── cv.pdf
+│   
 ```
 
 ## Technologies

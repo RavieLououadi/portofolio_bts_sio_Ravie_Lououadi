@@ -1334,9 +1334,7 @@ footer {
     font-size: .82rem;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 
 @media (max-width: 991px) {
     .skillgrid,
@@ -1536,4 +1534,146 @@ footer {
     margin-right: 8px;
     width: 20px;
     text-align: center;
+}
+
+.project-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin: 35px auto 60px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    margin-top: 75px;
+    margin-bottom: 45px;
+}
+
+.project-nav a {
+    position: relative;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.project-nav a:hover {
+    color: var(--orange);
+}
+
+.project-nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--orange);
+    transition: width 0.3s ease;
+}
+
+.project-nav a:hover::after {
+    width: 100%;
+}
+
+/* Défilement fluide */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Évite que le titre de section soit collé en haut */
+#projets-academiques,
+#projets-personnels,
+#projets-professionnels {
+    scroll-margin-top: 100px;
+}
+
+/* Affichage mobile */
+@media (max-width: 767px) {
+    .project-nav {
+        gap: 15px;
+        margin: 25px auto 45px;
+    }
+
+    .project-nav a {
+        font-size: 0.85rem;
+    }
+}
+
+
+.project-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.project-nav a i {
+    color: var(--orange);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.project-nav a:hover i {
+    color: #fff;
+}
+
+
+/* Flèches de navigation haut et bas */
+.scroll-buttons {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.scroll-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--orange);
+    border-radius: 50%;
+    background: var(--orange);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background: #fff;
+    color: var(--orange);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+    .scroll-buttons {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .scroll-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.brand-logo {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
 }

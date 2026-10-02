@@ -72,3 +72,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+// Flèches de navigation sur toutes les pages
+document.addEventListener("DOMContentLoaded", () => {
+    const navigation = document.createElement("div");
+    navigation.className = "scroll-buttons";
+
+    navigation.innerHTML = `
+        <button type="button" class="scroll-btn" id="scrollTop"
+                aria-label="Remonter en haut">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+
+        <button type="button" class="scroll-btn" id="scrollBottom"
+                aria-label="Descendre en bas">
+            <i class="bi bi-arrow-down"></i>
+        </button>
+    `;
+
+    document.body.appendChild(navigation);
+
+    document.getElementById("scrollTop").addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    document.getElementById("scrollBottom").addEventListener("click", () => {
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: "smooth"
+        });
+    });
+});
